@@ -1,0 +1,15 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "Student", "Uses the AI Agent")
+
+System(agent, "Basic AI Agent", "Python-based AI Assistant")
+
+System_Ext(llm, "OpenAI API / Ollama", "Provides AI responses")
+
+Rel(user, agent, "Sends questions")
+Rel(agent, llm, "Requests AI response")
+Rel(llm, agent, "Returns response")
+
+@enduml
